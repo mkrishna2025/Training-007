@@ -1,0 +1,23 @@
+<html>
+<header>
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</header>
+<body>
+    <div id="root"></div>
+	<script type="text/babel">
+		class Demo extends React.Component {
+			render(){
+				return <div>
+						<h1>Welcome to demo, {this.props.user}</h1>
+						<h2>Please login to proceed</h2>
+					  </div>;
+			}
+		}
+		
+		ReactDOM.render(<Demo user="Arjun" />, document.getElementById('root'));
+    </script>
+</body>
+</html>

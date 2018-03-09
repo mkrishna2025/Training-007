@@ -1,0 +1,44 @@
+
+TestFramework.createElement('h1', 'Welcome to Demo');
+
+var TestFramework = {
+	createElement: function(elementType, innerHTML){
+		if(elementType == 'h1'){
+			var uiElement = document.createElement('h1');
+			uiElement.innerHTML = innerHTML;
+			return uiElement;
+		}
+	}
+}
+
+React
+2 libraries
+	React
+	ReactDOM
+	
+React.createElement(type of element, attributes of element, innerHTML);
+ReactDOM.render(what to render , where to render);
+ReactDOM.render(React.createElement('h1', 'Welcome to Demo'), document.getElementById('root'));
+
+	babel standard
+ReactDOM.render(<h1>Welcome to demo</h1>, document.getElementById('root'));
+
+
+babel -> converts jsx code to react elements
+JSX Code -> <h1 id='header1'> Welcome to demo </h1>
+Converted code -> React.createElement('h1', { id: 'header1' } , 'Welcome to demo')
+Converted code is going to be rendered and not the jsx code.
+
+HTML vs JSX
+HTML elements are not compiled
+JSX elements are compiled
+HTML elements are rendered directly
+JSX elements are converted to older standard and then old code is rendered.
+
+Creating a component in React
+	Create any class, extend React.Component class and implement the abstract method render.
+
+
+1. local variables are accessible by using {}.
+	
+	

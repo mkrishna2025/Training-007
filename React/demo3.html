@@ -1,0 +1,20 @@
+<html>
+<header>
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</header>
+<body>
+    <div id="root"></div>
+	<script type="text/babel">
+		var user = 'Krishna';
+		const component = <div>
+							<h1>Welcome to demo, {user}</h1>
+							<h2>Please login to proceed</h2>
+						  </div>;
+		
+		ReactDOM.render(component, document.getElementById('root'));
+    </script>
+</body>
+</html>
