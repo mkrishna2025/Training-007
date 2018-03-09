@@ -39,6 +39,7 @@ Creating a component in React
 	Create any class, extend React.Component class and implement the abstract method render.
 
 
-1. local variables are accessible by using {}.
+1. local variables are accessible by using {variableName}.
+2. passed in variables are accessible by using {this.props.variableName}
 	
 	
