@@ -1,0 +1,43 @@
+<html>
+<header>
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</header>
+<body>
+    <div id="root"></div>
+	<script type="text/babel">
+		
+		function WelcomeScreen(props){
+			var user = props.user || 'Guest';
+			return <div>Welcome {user}</div>
+		}
+		
+		/*class WelcomeScreen extends React.Component {
+			render(){
+				return (
+					<div>Welcome {this.props.user}</div>
+				);
+			}
+		}
+		
+		WelcomeScreen.defaultProps = {
+			user: 'Guest'
+		}*/
+	
+		class Demo extends React.Component {
+			render(){
+				return <div>
+						<h1>Welcome to demo, Users are: </h1>
+						<h2><WelcomeScreen user="Krishna" /></h2>
+						<h2><WelcomeScreen user="Karthik" /></h2>
+						<h2><WelcomeScreen /></h2>
+					</div>;
+			}
+		}
+		
+		ReactDOM.render(<Demo/>, document.getElementById('root'));
+    </script>
+</body>
+</html>

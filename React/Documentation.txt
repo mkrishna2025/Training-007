@@ -39,7 +39,13 @@ Creating a component in React
 	Create any class, extend React.Component class and implement the abstract method render.
 
 
-1. local variables are accessible by using {variableName}.
+1. local/block variables are accessible by using {variableName}. This is like block level variables. Outside the block, cannot be accessible.
 2. passed in variables are accessible by using {this.props.variableName}
+3. class level variables are created inside constructor. Can be accessible any where inside a class using {this.state.variableName}}
+4. class.defaultProps ... defaultProps are used to set default values for the passed in variables. If value is not passed in, it will be picked from defaultProps
+
+.bind(this) -> we need to pass the scope(which can be static or dynamic) to the method when ever we are calling from render method.
+
+Events - https://www.w3schools.com/jsref/dom_obj_event.asp 
 	
 	

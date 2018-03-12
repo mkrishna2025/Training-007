@@ -1,0 +1,59 @@
+<html>
+<header>
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</header>
+<body>
+    <div id="root"></div>
+	<script type="text/babel">
+		class Demo extends React.Component {
+			constructor(props){
+				super(props);
+				this.state = {
+					valueA: 10,
+					valueB: 20,
+					valueC: 0
+				}
+			}
+			
+			valueAChange(event){
+				this.state.valueA = parseFloat(event.target.value);
+			}
+			
+			valueBChange(event){
+				this.state.valueB = parseFloat(event.target.value);
+			}
+			
+			buttonClick(event){
+				debugger;
+				//this.state.valueC = this.state.valueA + this.state.valueB;
+				
+				var c = this.state.valueA + this.state.valueB;
+				this.setState({ valueC: c });
+			}
+			
+			render(){
+				var city = 'Hyderabad';
+				return <div>
+						<h1>Welcome to {city}, {this.props.user}</h1>
+						<br/>
+						value A: <input type="text" onChange={this.valueAChange.bind(this)}/>
+						<br />
+						<br/>
+						value B: <input type="text" onChange={this.valueBChange.bind(this)}/>
+						<br />
+						<br />
+						<input type="button" value="CALCULATE" onClick={this.buttonClick.bind(this)} />
+						<br />
+						<br/>
+						<h2>result is {this.state.valueC}</h2>
+					</div>;
+			}
+		}
+		
+		ReactDOM.render(<Demo user="Venkat"/>, document.getElementById('root'));
+    </script>
+</body>
+</html>
