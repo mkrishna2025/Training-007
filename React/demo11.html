@@ -1,0 +1,55 @@
+<html>
+<header>
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</header>
+<body>
+    <div id="root"></div>
+	<script type="text/babel">
+		const STUDENTS = [
+			{ name: 'Keerthi', age: 20 },
+			{ name: 'John', age: 30},
+			{ name: 'Tripura', age: 25}
+		];
+					
+		class Demo extends React.Component {
+			constructor(props){
+				super(props);
+				this.state = {
+					students: STUDENTS,
+					filteredStudents: STUDENTS
+				};
+			}
+			
+			/*textBoxChange(event){
+				var text = event.target.value;
+				var items = [];
+				for(var course of this.state.courses){
+					if(course.indexOf(text) >= 0){
+						items.push(course);
+					}
+				}
+				this.setState({ filteredCourses: items});
+			}*/
+			
+			render(){
+				return <div>
+						Welcome to Students, Please find list below.
+						<br/><br/><br/>
+						<table>
+							<th>Name</th>
+							<th>Age</th>
+							<tbody>
+								{this.state.filteredStudents.map(student => <tr><td>{student.name}</td><td>{student.age}</td></tr>)}
+							</tbody>
+						</table>
+					</div>;
+			}
+		}
+		
+		ReactDOM.render(<Demo />, document.getElementById('root'));
+    </script>
+</body>
+</html>

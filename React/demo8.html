@@ -1,0 +1,36 @@
+<html>
+<header>
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</header>
+<body>
+    <div id="root"></div>
+	<script type="text/babel">
+		class Demo extends React.Component {
+			constructor(props){
+				super(props);
+			}
+			
+			renderItem(item){
+				return <li>{item}</li>;
+			}
+			
+			render(){
+				var courses = [
+					'Javascript', 'React', 'React Native', 'Node', 'React with Node'
+				]
+				return <div>
+						Welcome to Courses, Please find list below.
+						<ul>
+							{courses.map(this.renderItem)}
+						</ul>
+					</div>;
+			}
+		}
+		
+		ReactDOM.render(<Demo />, document.getElementById('root'));
+    </script>
+</body>
+</html>

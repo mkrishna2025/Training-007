@@ -47,5 +47,25 @@ Creating a component in React
 .bind(this) -> we need to pass the scope(which can be static or dynamic) to the method when ever we are calling from render method.
 
 Events - https://www.w3schools.com/jsref/dom_obj_event.asp 
+
+Array.prototype.map = function(callBack){
+	for(var item of this.elements){
+		callBack.call(this, item);
+	}
+}
+
+// normal way of creating function
+var test = function(item){
+		return <li>{item}</li>;
+	}
+	
+// inline or arrow function
+var test = (item) => {
+		return <li>{item}</li>;
+	}
+var test = item => <li>{item}</li>
+			
+	
+
 	
 	
