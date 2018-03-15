@@ -4,6 +4,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	
+	<style>
+		.student {
+			border: solid;
+		}
+	</style>
 </header>
 <body>
     <div id="root"></div>
@@ -11,8 +17,21 @@
 		const STUDENTS = [
 			{ name: 'Keerthi', age: 20 },
 			{ name: 'John', age: 30},
-			{ name: 'Tripura', age: 25}
+			{ name: 'Tripura', age: 25},
+			{ name: 'Venkat', age: 25}
 		];
+		
+		class StudentView extends React.Component {
+			render(){
+				var student = this.props.data;
+				return (
+					<tr>
+						<td>{student.name}</td>
+						<td>{student.age}</td>
+					</tr>
+				);
+			}
+		}
 					
 		class Demo extends React.Component {
 			constructor(props){
@@ -23,26 +42,27 @@
 				};
 			}
 			
-			/*textBoxChange(event){
+			onNameChange(event){
 				var text = event.target.value;
 				var items = [];
-				for(var course of this.state.courses){
-					if(course.indexOf(text) >= 0){
-						items.push(course);
+				for(var student of this.state.students){
+					if(student.name.toLowerCase().indexOf(text.toLowerCase()) >= 0){
+						items.push(student);
 					}
 				}
-				this.setState({ filteredCourses: items});
-			}*/
+				this.setState({ filteredStudents: items});
+			}
 			
 			render(){
 				return <div>
 						Welcome to Students, Please find list below.
 						<br/><br/><br/>
-						<table>
+						Search Name: <input type="text" onChange={this.onNameChange.bind(this)} />
+						<table className="student">
 							<th>Name</th>
 							<th>Age</th>
 							<tbody>
-								{this.state.filteredStudents.map(student => <tr><td>{student.name}</td><td>{student.age}</td></tr>)}
+								{this.state.filteredStudents.map(student => <StudentView data={student} />)}
 							</tbody>
 						</table>
 					</div>;

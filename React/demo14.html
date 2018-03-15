@@ -1,0 +1,79 @@
+<html>
+<header>
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	<link rel="stylesheet" href="demo12.css" />
+</header>
+<body>
+    <div id="root"></div>
+	<script type="text/babel">
+	
+	class LoginScreen extends React.Component {
+		constructor(props){
+			super(props);
+			var states = [
+					{ name: 'Telangana', value: '1', countryId: '1'},
+					{ name: 'Delhi', value: '2', countryId: '1'},
+					{ name: 'Punjab', value: '3', countryId: '1'},
+					{ name: 'New Jersey', value: '4', countryId: '3'},
+					{ name: 'Newyork', value: '5', countryId: '3'}
+				];
+			this.state = {
+				firstName: '',
+				lastName: '',
+				country: '',
+				countries: [
+					{ name: 'India', value: '1'},
+					{ name: 'Australia', value: '2'},
+					{ name: 'USA', value: '3'}
+				],
+				states: states,
+				filteredStates: states
+			}
+		}
+		
+		loginClick(){
+			debugger;
+			alert(JSON.stringify(this.state));
+		}
+		render(){
+			return (
+				<div>
+					<h3>Using CSS to style an HTML Form</h3>
+					<div>
+						<label>First Name</label>
+						<input type="text" id="fname" name="firstname" placeholder="Your name.." onChange={ event => this.state.firstName = event.target.value } />
+						<label>Last Name</label>
+						<input type="text" id="lname" name="lastname" placeholder="Your last name.." onChange={ event => this.state.lastName = event.target.value }/>
+						<label>Country</label>
+						<select id="country" name="country" onChange={ event => {
+							this.state.country = event.target.value;
+							var items = [];
+							for(var state of this.state.states){
+								if(state.countryId == this.state.country){
+									items.push(state);
+								}
+							}
+							this.setState({ filteredStates: items});
+						} }>
+							<option value="-1">Please select Country</option>
+							{this.state.countries.map(country => <option value={country.value}>{country.name}</option>)}
+						</select>
+						<label>State</label>
+						<select id="state" name="state" onChange={ event => this.state.state = event.target.value }>
+							<option value="-1">Please select State</option>
+							{this.state.filteredStates.map(state => <option value={state.value}>{state.name}</option>)}
+						</select>
+						<input type="button" value="Submit" onClick={this.loginClick.bind(this)} />
+					</div>
+				</div>
+			);
+		}
+	}
+	
+	ReactDOM.render(<LoginScreen/>, document.getElementById('root'));
+    </script>
+</body>
+</html>
