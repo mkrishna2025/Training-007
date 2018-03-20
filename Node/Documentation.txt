@@ -1,0 +1,27 @@
+Node
+	Server Side Framework
+	Connected in Node structure
+	Modular Framework 
+		- Module is like a node
+		- Each module can be added/updated/deleted anytime.
+	Ex: foreach - lodash, foreach
+	npm - node package manager
+	
+node -v => 8.1.4
+npm -version => 5.0.3
+
+Creating a project
+	create folder with project name and run command 
+	npm init
+	
+Creating a file
+	File can created manually in any editor. Assume we have created index.js
+	
+Running a file
+	node filename.js
+	node index.js
+	
+Javascript
+	function
+	object
+	class
