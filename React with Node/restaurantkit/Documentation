@@ -1,0 +1,30 @@
+node index.js
+
+React
+npm run start
+npm run build
+npm run test
+npm run eject
+
+ES5
+var React = require('react');
+module.exports
+
+
+ES6
+import React from 'react';
+export
+
+
+html
+<div class="container" style="background-color:#f1f1f1">
+
+jsx
+ <div class="container" style={{ "background-color":"#f1f1f1"}} >
+
+html
+<img src="img_avatar2.png" alt="Avatar" class="avatar" />
+
+jsx
+import avatar from './img_avatar2.png'
+<img src={avatar} alt="Avatar" class="avatar" />
