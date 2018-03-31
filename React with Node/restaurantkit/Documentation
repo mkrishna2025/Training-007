@@ -28,3 +28,57 @@ html
 jsx
 import avatar from './img_avatar2.png'
 <img src={avatar} alt="Avatar" class="avatar" />
+
+html
+<button type="submit">Login</button>
+
+
+<Test username="Arjun" />
+
+class Test {
+    render() {
+        var user = this.props.username;
+    }
+}
+
+Installing Module
+syntax -
+npm install moduleName
+
+--save is attribute to save inside depencency section of package.json
+
+Installing Routing
+npm install --save react-router-dom
+
+
+Based on below code "/test1" is matching 2 routes. So It will load Page1 and Page2
+<div>
+        <Route path="/test1" component={Page1} />
+        <Route path="/test1" component={Page2} />
+        <Route path="/test2" component={Page2} />
+</div>
+
+If we use, it will load first matching ones ... ie Page1 only.
+<Switch>
+        <Route path="/test1" component={Page1} />
+        <Route path="/test1" component={Page2} />
+        <Route path="/test2" component={Page2} />
+</Switch>
+
+
+/user
+/user/1 - 1 is url param
+/user/2 - 2 is url param
+/user/contact - contact is sublink
+
+React Routing 4 version considers sublink as a url param only.
+
+URL => "/test1/subTest1"
+
+route => "/test1/subTest1"
+route => "/test1"
+
+Note: When there are nested routes, its preferable to add exact key word for parent route 
+so that it will not match for nested route.
+
+
