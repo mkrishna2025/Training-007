@@ -1,0 +1,21 @@
+img {
+  width: 110PX;
+  float: left;
+  margin: 0 100px 0 0;
+}
+
+ul>li{
+  display: inline;
+  margin: 0 20px;
+  float: left;
+  padding: 6px 0 0 0;
+  text-decoration: 'none';
+}
+
+a{
+  text-decoration: none;
+}
+
+a:visited {
+    color: green;
+}

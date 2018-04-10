@@ -41,7 +41,10 @@ export default class Login extends React.Component {
         });
         
         if(isValid){
-            alert(JSON.stringify(this.state));
+            //debugger;
+            //alert(JSON.stringify(this.state));
+            // it changes URL only.
+            this.props.history.push("/home");
         }
     }
 
